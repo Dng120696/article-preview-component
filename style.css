@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root{
+  /* ## Colors */
+
+--Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+--Grayish-Blue: hsl(212, 23%, 69%);
+--Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+
+}
+
+body{
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Light-Grayish-Blue);
+}
+.container{
+  width: clamp(30rem,90%, 100rem);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 2rem;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+}
+.container-img{
+  flex: 1;
+  border-radius: 2rem;
+ 
+}
+.container-img img{
+ width: 100%;
+  height:clamp(30rem,50vw, 42rem);
+  object-fit: cover;
+
+  border-radius: 2rem 2rem 0 0;
+ 
+}
+.content{
+  flex:1.5;
+  padding:clamp(2rem,3vw,3rem) clamp(3rem,4vw,4rem);
+
+
+}
+img{
+  max-width: 100%;
+
+}
+.flex{
+  display: flex;
+}
+h1{
+  font-size:clamp(1.8rem,5vw,3.2rem);
+  color: var(--Very-Dark-Grayish-Blue);
+}
+h1,div.mich-img p span:first-child{
+  font-weight: 700;
+}
+p{
+  font-size: clamp(1.4rem,3.5vw,2rem);
+  font-weight: 500;
+  color: var(--Desaturated-Dark-Blue);
+}
+h1,p{
+  margin-bottom:clamp(2.2rem,4vw,2.5rem);
+  line-height: 1.6;
+}
+span{
+  display: block;
+}
+
+
+
+/* footer */
+.footer{
+  padding-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.5rem;
+
+}
+div.mich-img {
+  gap: 1.5rem;
+  align-items: center;
+
+}
+div.mich-img img{
+  width: 4rem;
+  height:4rem ;
+  border-radius: 50%;
+}
+div.mich-img p{
+ margin: 0;
+}
+
+div.mich-img p span:first-child{
+  color: var(--Very-Dark-Grayish-Blue);
+}
+div.mich-img p span:last-child{
+  color: var(--Grayish-Blue);
+  font-weight: 500;
+  font-size: clamp(1.2rem,2,5vw,1.8rem);
+}
+.btn-arrow{
+  width: 4rem;
+  height: 4rem;
+  margin-top: 1.5rem;
+  align-self: center;
+}
+
+.btn-arrow i{
+  font-size: clamp(1.6rem,3vw,2rem);
+  color: var(--Desaturated-Dark-Blue);
+  background-color: var(--Light-Grayish-Blue);
+  padding: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+  outline: none;
+}
+
+.btn-clicked i{
+  color:#fff;
+  background-color: var(--Desaturated-Dark-Blue);
+ 
+}
+.box{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  width:100%;
+  min-height:7.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  z-index: 10;
+   border-radius: 0 0 2rem 2rem;
+   box-shadow: 0 0 3rem rgba(0,0,0,0.2);
+}
+.hidden{
+  display: none;
+
+}
+.box h2{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--Grayish-Blue);
+  font-weight: 700;
+
+}
+.box ul.flex{
+  padding-right: clamp(7rem,15vw,9rem);
+  gap: clamp(1rem,2vw,1.5rem);
+}
+.box ul.flex li i{
+ color: #fff;
+ font-size:clamp(2rem,4vw,2.4rem);
+}
+.box ul.flex img:hover{
+  color: var(--Grayish-Blue);
+  cursor: pointer;
+  padding: 0;
+  width: 0;
+
+}
+
+@media (min-width:1000px) {
+  body{
+    position: relative;
+  }
+  .container{
+    flex-direction: row;
+  
+  }
+  .box{
+    bottom: 20%;
+    left:81.2%;
+    border-radius: 1rem;
+    width: 25rem;
+    min-height:5rem;
+    padding: 0 3rem;
+    z-index: 10000;
+ 
+  }
+
+  .box::after{
+    content:'';
+    top:120%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    border-bottom: 2rem solid transparent;
+    border-top: 2rem solid var(--Very-Dark-Grayish-Blue);
+    border-left: 2rem solid transparent;
+    border-right:2rem solid transparent;
+  
+  }
+  .box ul.flex{
+    padding-right: 0;
+    gap: clamp(1rem,2vw,1.2rem);
+  }
+  .container-img img{
+    border-radius: 2rem 0 0 2rem;
+  }
+}
